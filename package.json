@@ -10,6 +10,7 @@
     "build": "gatsby build",
     "clean": "rimraf .cache public",
     "lint": "tslint --project .",
+    "prettier": "prettier src/**/*.ts*",
     "start": "gatsby develop"
   },
   "devDependencies": {
