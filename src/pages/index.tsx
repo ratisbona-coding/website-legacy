@@ -1,3 +1,8 @@
 import * as React from "react";
+import styled from "@emotion/styled";
 
-export default () => <h1>It works!</h1>;
+const Heading = styled.h1`
+  font-family: sans-serif;
+`;
+
+export default () => <Heading>It works!</Heading>;
