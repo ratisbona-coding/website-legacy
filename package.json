@@ -9,6 +9,7 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "rimraf .cache public",
+    "lint": "tslint --project .",
     "start": "gatsby develop"
   },
   "devDependencies": {
@@ -24,6 +25,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "rimraf": "^3.0.0",
+    "tslint": "^5.20.1",
     "typescript": "^3.7.3"
   }
 }
