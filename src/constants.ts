@@ -1,5 +1,5 @@
 export const accentColor = "#82bd53";
-export const darkColor = "#111";
+export const darkColor = "#222";
 export const crtTextColor = "rgb(209, 233, 205)";
 export const triangleSize = "6rem";
 export const asciiArtLogo = `
