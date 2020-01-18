@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import React from "react";
-import { accentColor, crtTextColor, darkColor } from "../constants";
-import { Flicker } from "./crt/flicker";
-import { Stripes } from "./crt/stripes";
+import { accentColor, crtTextColor, darkColor } from "../../constants";
+import { Flicker } from "./flicker";
+import { Stripes } from "./stripes";
 
 const Container = styled.div`
   position: relative;
