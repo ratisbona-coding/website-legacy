@@ -1,7 +1,9 @@
 import styled from "@emotion/styled";
 import * as React from "react";
 import { Brand } from "../components/brand";
+import { LandingCRT } from "../components/landing-crt";
 import { Page } from "../components/page";
+import { UpwardsRightTriangle } from "../components/triangle";
 import { WaveBackground } from "../components/wave-background";
 import { accentColor, darkColor } from "../constants";
 
@@ -51,5 +53,12 @@ export default () => (
         Lorem ipsum dolor sit amet
       </Description>
     </Jumbotron>
+
+    <div style={{ height: "50vh" }} />
+
+    <LandingCRT />
+    <UpwardsRightTriangle />
+
+    <div style={{ height: "50vh" }} />
   </Page>
 );
