@@ -62,7 +62,7 @@ export const DownwardsRightTriangle = ({ color = "white" }: ITriangleProps) => (
     css={css`
       &:before {
         border-width: 0rem 100vw ${triangleSize} 0rem;
-        border-color: transparent transparent ${color} transparent;
+        border-color: transparent ${color} transparent transparent;
       }
     `}
   />
