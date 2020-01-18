@@ -1,6 +1,7 @@
 import { keyframes } from "@emotion/core";
 import styled from "@emotion/styled";
 import React from "react";
+import { accentColor } from "../../constants";
 
 const vanish = keyframes`
   0%, 25%, 60%, 100% {
@@ -20,7 +21,7 @@ const Block = styled.span`
   width: 0.5rem;
   margin-left: 3px;
   animation: ${vanish} 2s infinite cubic-bezier(1, 0, 0, 1);
-  box-shadow: 0px 0px 3px lightgreen;
+  box-shadow: 0px 0px 3px ${accentColor};
 `;
 
 export const Cursor = () => <Block />;

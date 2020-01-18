@@ -1,9 +1,7 @@
 import { keyframes } from "@emotion/core";
 import styled from "@emotion/styled";
 import React from "react";
-
-const flickerColor1 = "rgba(202, 255, 184, 0.1)";
-const flickerColor2 = "rgba(202, 255, 184, 0.05)";
+import { crtFlickerColor1, crtFlickerColor2 } from "../../constants";
 
 const move = keyframes`
   0% {
@@ -34,9 +32,9 @@ const Gradient = styled.div`
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0) 0%,
-    ${flickerColor2} 49.5%,
-    ${flickerColor1} 50%,
-    ${flickerColor2} 50.5%,
+    ${crtFlickerColor2} 49.5%,
+    ${crtFlickerColor1} 50%,
+    ${crtFlickerColor2} 50.5%,
     rgba(0, 0, 0, 0) 100%
   );
   animation: ${move} 4s infinite linear;

@@ -1,6 +1,10 @@
 export const accentColor = "#82bd53";
 export const darkColor = "#222";
 export const crtTextColor = "rgb(209, 233, 205)";
+export const crtStripeColor1 = "rgba(0, 10, 0, 0.1)";
+export const crtStripeColor2 = "rgba(0, 0, 0, 0.2)";
+export const crtFlickerColor1 = "rgba(202, 255, 184, 0.1)";
+export const crtFlickerColor2 = "rgba(202, 255, 184, 0.05)";
 export const triangleSize = "6rem";
 export const asciiArtLogo = `
                __  _      __                                        ___                    _    __
