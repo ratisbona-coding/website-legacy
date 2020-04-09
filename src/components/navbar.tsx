@@ -1,78 +1,182 @@
 import styled from "@emotion/styled";
 import * as React from "react";
-import { accentColor } from "../constants";
-import { BasicBrand } from "./brand";
+import { useCallback, useState } from "react";
+import {
+  accentColor,
+  breakpointTablet,
+  transitionDuration,
+} from "../constants";
+import { useIncrementedID } from "../hooks/use-incremented-id";
+import { useRaisedNavbar } from "../hooks/use-raised-navbar";
+import { useScrollSpyActiveElementName } from "../hooks/use-scrollspy";
+import { Container } from "./container";
+import { Burger } from "./icons/burger";
 import { Link } from "./link";
 
-const Menu = styled.ul`
+interface INavProps {
+  raised: boolean;
+}
+
+const Nav = styled.nav<INavProps>`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  display: block;
-  list-style: none;
-  margin: 0;
-  padding: 0rem 1rem;
+  z-index: 3;
+
+  color: white;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition-property: background-color;
+  transition-duration: ${transitionDuration};
+
+  ${(props) =>
+    props.raised &&
+    `
+    background-color: rgba(0, 0, 0, 0.75);
+  `}
+
+  @media screen and (max-width: ${breakpointTablet}) {
+    background-color: black;
+  }
 `;
 
-interface IMenuItemProps {
-  isActive?: boolean;
+const ToggleInput = styled.input`
+  display: none;
+`;
+
+const ToggleButton = styled.label`
+  display: none;
+
+  @media screen and (max-width: ${breakpointTablet}) {
+    display: inline-block;
+    width: 4rem;
+    padding: 1rem;
+    cursor: pointer;
+    float: right;
+  }
+`;
+
+const Brand = styled.div`
+  display: inline-block;
+  padding: 1rem;
+`;
+
+const Menu = styled.ul`
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @media screen and (max-width: ${breakpointTablet}) {
+    display: block;
+    height: 0;
+    overflow: hidden;
+
+    transition-property: height;
+    transition-duration: ${transitionDuration};
+
+    ${ToggleInput}:checked ~ & {
+      height: 100vh;
+    }
+  }
+`;
+
+const Item = styled.li`
+  display: inline-block;
+
+  @media screen and (max-width: ${breakpointTablet}) {
+    display: block;
+    text-align: right;
+  }
+`;
+
+interface IClickableAreaProps {
+  active: boolean;
 }
 
-const MenuItem = styled.li<IMenuItemProps>`
-  position: relative;
-  display: inline-block;
-  padding: 1rem 1.5rem;
-  color: ${accentColor};
+const ClickableArea = styled.div<IClickableAreaProps>`
+  display: block;
+  background-color: transparent;
+  padding: 1rem;
 
-  &:before {
-    display: block;
-    content: " ";
-    height: 6px;
-    position: absolute;
-    left: 0.5rem;
-    right: 0.5rem;
-    top: 0rem;
-  }
-
-  ${({ isActive }) =>
-    isActive
-      ? `
-      &:before {
-        background-color: ${accentColor};
-      }
+  ${(props) =>
+    props.active &&
     `
-      : `
-      &:hover &:before {
-        background-color: white;
-      }
+      background-color: ${accentColor};
     `}
 `;
 
-const BrandContainer = styled.div`
-  color: white;
+const BadgeDiv = styled.div`
+  display: block;
+  max-width: 100px;
+  min-width: 60px;
+  position: fixed;
+  right: 50px;
+  top: 0;
+  width: 10%;
+  z-index: 6;
+
+  @media screen and (max-width: ${breakpointTablet}) {
+    visibility: hidden;
+  }
 `;
 
-export const Navbar = () => (
-  <Menu>
-    <MenuItem>
-      <Link label="About" to="/">
-        <BrandContainer>
-          <BasicBrand />
-        </BrandContainer>
+interface INavbarItem {
+  label: string;
+  marker: string;
+}
+
+interface INavbarProps {
+  items: ReadonlyArray<INavbarItem>;
+}
+
+export const Navbar = ({ items }: INavbarProps) => {
+  const activeItem = useScrollSpyActiveElementName();
+  const isRaised = useRaisedNavbar();
+  const id = useIncrementedID();
+  const navbarID = `navbar-toggle-${id}`;
+
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const hideMenu = useCallback(() => setIsMenuVisible(false), []);
+  const updateMenuVisibility = useCallback(
+    (event) => setIsMenuVisible(event.target.checked),
+    [],
+  );
+
+  const renderedItems = items.map((item) => (
+    <Item key={item.marker}>
+      <Link label={item.label} to={`#${item.marker}`} underline={false}>
+        <ClickableArea onClick={hideMenu} active={activeItem === item.marker}>
+          {item.label}
+        </ClickableArea>
       </Link>
-    </MenuItem>
-    <MenuItem isActive>
-      <Link label="About" to="/" />
-    </MenuItem>
-    <MenuItem>
-      <Link label="Events" to="events" />
-    </MenuItem>
-    <MenuItem>
-      <Link label="Contact" to="contact" />
-    </MenuItem>
-    <MenuItem>
-      <Link label="Imprint" to="imprint" />
-    </MenuItem>
-  </Menu>
-);
+    </Item>
+  ));
+
+  return (
+    <Nav raised={isRaised}>
+      <Container>
+        <Brand>
+          <Link label="Home" to="../index.html" underline={false}>
+            Ratisbona Coding e.V.
+          </Link>
+        </Brand>
+
+        <ToggleButton htmlFor={navbarID}>
+          <Burger />
+        </ToggleButton>
+        <ToggleInput
+          checked={isMenuVisible}
+          onChange={updateMenuVisibility}
+          type="checkbox"
+          id={navbarID}
+        />
+
+        <Menu>{renderedItems}</Menu>
+      </Container>
+    </Nav>
+  );
+};
