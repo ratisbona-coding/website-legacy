@@ -13,4 +13,6 @@ export enum Anchors {
   UsageData = "usage-data",
   Cookies = "cookies",
   Disclosure = "disclosure",
+  FacebookPixel = "facebook-pixel",
+  RightOfProvidingInformation = "right-of-providing-information",
 }

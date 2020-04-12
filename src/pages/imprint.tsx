@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import * as React from "react";
 import { Anchors } from "../anchors";
+import { Container } from "../components/container";
 import { Link } from "../components/link";
 import { Navbar } from "../components/navbar";
 import { Page } from "../components/page";
@@ -20,6 +21,11 @@ const FacebookPixelOptOutClickArea = styled.span`
   cursor: pointer;
   text-decoration: underline;
 `;
+
+const optOut = () => {
+  // Add required code for opting out here.
+  console.log("Opted out.");
+}
 
 const Imprint = () => {
   return (
@@ -50,6 +56,14 @@ const Imprint = () => {
             label: "Cookies",
             marker: Anchors.Cookies,
           },
+          {
+            label: "Facebook Pixel",
+            marker: Anchors.FacebookPixel,
+          },
+          {
+            label: "Auskunftsrecht",
+            marker: Anchors.RightOfProvidingInformation,
+          },
         ]}
       />
 
@@ -78,7 +92,7 @@ const Imprint = () => {
           </Container>
         </Section>
 
-        {useScrollSpyMarker(Anchors.Kontakt)}
+        {useScrollSpyMarker(Anchors.Contact)}
         <Section>
           <Container>
             <Title>Kontakt</Title>
@@ -150,7 +164,7 @@ const Imprint = () => {
           </Container>
         </Section>
 
-        {useScrollSpyMarker(Anchors.VerweiseUndLinks)}
+        {useScrollSpyMarker(Anchors.References)}
         <Section>
           <Container>
             <Title>Verweise und Links</Title>
@@ -181,7 +195,7 @@ const Imprint = () => {
           </Container>
         </Section>
 
-        {useScrollSpyMarker(Anchors.Datenermittlung)}
+        {useScrollSpyMarker(Anchors.DataCommunication)}
         <Section>
           <Container>
             <Title>
@@ -284,7 +298,7 @@ const Imprint = () => {
           </Container>
         </Section>
 
-        {useScrollSpyMarker(Anchors.Bestandsdaten)}
+        {useScrollSpyMarker(Anchors.ExistingData)}
         <Section>
           <Container>
             <Title>Bestandsdaten</Title>
@@ -303,7 +317,7 @@ const Imprint = () => {
           </Container>
         </Section>
 
-        {useScrollSpyMarker(Anchors.Nutzungsdaten)}
+        {useScrollSpyMarker(Anchors.UsageData)}
         <Section>
           <Container>
             <Title>Nutzungsdaten</Title>
@@ -391,7 +405,7 @@ const Imprint = () => {
           </Container>
         </Section>
 
-        {useScrollSpyMarker(Anchors.Auskunftsrecht)}
+        {useScrollSpyMarker(Anchors.RightOfProvidingInformation)}
         <Section>
           <Container>
             <Title>Auskunftsrecht</Title>
