@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import * as React from "react";
-import { useCallback} from "react";
+import { useCallback } from "react";
 
 interface IAProps {
   underline: boolean;
@@ -42,10 +42,10 @@ interface ILinkProps {
   underline?: boolean;
 }
 
-export const Link = ({ 
-  children, 
-  label, 
-  target, 
+export const Link = ({
+  children,
+  label,
+  target,
   to,
   underline = true,
 }: ILinkProps) => {

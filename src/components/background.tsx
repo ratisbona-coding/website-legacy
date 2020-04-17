@@ -1,14 +1,9 @@
 import styled from "@emotion/styled";
 import * as React from "react";
 import { breakpointMobile } from "../constants";
-import { usePublicFileURL } from "../hooks/use-public-file-url";
 
-interface IBackgroundDivProps {
-  imageUrl: string | undefined;
-}
-
-const BackgroundDiv = styled.div<IBackgroundDivProps>`
-  background-image: url(${(props) => props.imageUrl});
+const BackgroundDiv = styled.div`
+  background-image: #040b1a;
   background-color: #040b1a;
   color: white;
 
@@ -22,6 +17,5 @@ interface IBackgroundProps {
 }
 
 export const Background = ({ children }: IBackgroundProps) => {
-  const imageUrl = usePublicFileURL("images/background.svg");
-  return <BackgroundDiv imageUrl={imageUrl}>{children}</BackgroundDiv>;
+  return <BackgroundDiv>{children}</BackgroundDiv>;
 };

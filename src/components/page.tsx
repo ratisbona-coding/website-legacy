@@ -1,17 +1,17 @@
 import * as React from "react";
 import Helmet from "react-helmet";
-import { Background} from "./background";
+import { Background } from "./background";
 import { siteDescription, siteTitle } from "../constants";
 import { accentColor } from "../constants";
 import "./page.css";
 
 interface IPageProps {
   children: React.ReactNode;
+  title: string;
 }
 
-export const Page = ({ children }: IPageProps) => {
-  
-  return(
+export const Page = ({ children, title = siteTitle }: IPageProps) => {
+  return (
     <Background>
       <Helmet>
         <meta charSet="utf-8" />
@@ -23,7 +23,7 @@ export const Page = ({ children }: IPageProps) => {
         <meta name="keywords" content="" />
         <meta name="theme-color" content={accentColor} />
 
-        <title>{siteTitle}</title>
+        <title>{title}</title>
       </Helmet>
 
       {children}

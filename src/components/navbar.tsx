@@ -109,21 +109,6 @@ const ClickableArea = styled.div<IClickableAreaProps>`
     `}
 `;
 
-const BadgeDiv = styled.div`
-  display: block;
-  max-width: 100px;
-  min-width: 60px;
-  position: fixed;
-  right: 50px;
-  top: 0;
-  width: 10%;
-  z-index: 6;
-
-  @media screen and (max-width: ${breakpointTablet}) {
-    visibility: hidden;
-  }
-`;
-
 interface INavbarItem {
   label: string;
   marker: string;

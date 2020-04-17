@@ -4,17 +4,16 @@ import { Page } from "../components/page";
 import { Navbar } from "../components/navbar";
 import { Anchors } from "../anchors";
 
-
 export default () => (
   <Page>
-      <Navbar
+    <Navbar
       items={[
         {
           label: "About",
           marker: Anchors.About,
         },
       ]}
-      />
+    />
 
     <div style={{ height: "50vh" }} />
 

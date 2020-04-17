@@ -6,7 +6,6 @@ const Img = styled.img`
   width: 100%;
 `;
 
-
 interface IImageProps {
   label: string;
   src: string;
@@ -15,10 +14,5 @@ interface IImageProps {
 export const Image = ({ label, src }: IImageProps) => {
   const image = usePublicFileURL(src);
 
-  return (
-    <Img
-      alt={label}
-      src={image ?? src}
-    />
-  );
+  return <Img alt={label} src={image ?? src} />;
 };
