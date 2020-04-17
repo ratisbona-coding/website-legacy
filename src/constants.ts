@@ -1,5 +1,5 @@
 export const siteDescription =
-  "Ratisbona Coding e.V. is an student club from students for students";
+  "Ratisbona Coding e.V. is a student club from students for students";
 export const siteTitle = "Ratisbona Coding e.V.";
 
 export const accentColor = "#82bd53";

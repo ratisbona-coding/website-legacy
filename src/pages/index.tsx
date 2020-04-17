@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import * as React from "react";
 import { Page } from "../components/page";
 import { Navbar } from "../components/navbar";

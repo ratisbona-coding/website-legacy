@@ -99,7 +99,7 @@ const findActiveMarkerName = (): string | null => {
 
 const findActiveMarkerAndUpdateHash = () => {
   const marker = findActiveMarkerName();
-  const hash = `#${marker ?? ""}`;
+  const hash = `#${ marker ? marker : "" }`;
   updateHash(hash);
   return marker;
 };
