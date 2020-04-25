@@ -1,37 +1,18 @@
-import { graphql, useStaticQuery } from "gatsby";
+import styled from "@emotion/styled";
 import * as React from "react";
+import { usePublicFileURL } from "../hooks/use-public-file-url";
 
-interface IQueryResult {
-  allFile: {
-    nodes: ReadonlyArray<{
-      publicURL: string;
-      relativePath: string;
-    }>;
-  };
-}
+const Img = styled.img`
+  width: 100%;
+`;
 
 interface IImageProps {
   label: string;
   src: string;
 }
 
-export const Image = ({ label, src: relativePath }: IImageProps) => {
-  const { allFile } = useStaticQuery<IQueryResult>(
-    graphql`
-      query ImageQuery {
-        allFile {
-          nodes {
-            publicURL
-            relativePath
-          }
-        }
-      }
-    `,
-  );
+export const Image = ({ label, src }: IImageProps) => {
+  const image = usePublicFileURL(src);
 
-  const image = allFile.nodes.find(
-    (file) => file.relativePath === relativePath,
-  );
-
-  return <img alt={label} src={image?.publicURL ?? relativePath} />;
+  return <Img alt={label} src={image ?? src} />;
 };

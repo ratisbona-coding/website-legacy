@@ -1,13 +1,36 @@
 import styled from "@emotion/styled";
 import * as React from "react";
+import { useCallback } from "react";
 
-const A = styled.a`
+interface IAProps {
+  underline: boolean;
+}
+
+const A = styled.a<IAProps>`
   color: inherit;
-  text-decoration: none;
+
+  ${(props) =>
+    props.underline
+      ? `
+        text-decoration: underline;
+      `
+      : `
+        text-decoration: none;
+      `}
 
   &:active,
+  &:focus,
   &:visited {
-    color: inherit;
+    color: currentColor;
+
+    ${(props) =>
+      props.underline
+        ? `
+          text-decoration: underline;
+        `
+        : `
+          text-decoration: none;
+        `}
   }
 `;
 
@@ -16,10 +39,38 @@ interface ILinkProps {
   label: string;
   target?: "_blank";
   to: string;
+  underline?: boolean;
 }
 
-export const Link = ({ children, label, target, to }: ILinkProps) => (
-  <A aria-label={label} href={to} target={target}>
-    {children ?? label}
-  </A>
-);
+export const Link = ({
+  children,
+  label,
+  target,
+  to,
+  underline = true,
+}: ILinkProps) => {
+  const smoothScrollToTarget = useCallback(
+    (event: React.SyntheticEvent) => {
+      event.preventDefault();
+
+      window.Jump(to, {
+        duration: 200,
+      });
+    },
+    [to],
+  );
+
+  const onClick = to.startsWith("#") ? smoothScrollToTarget : undefined;
+
+  return (
+    <A
+      aria-label={label}
+      href={to}
+      onClick={onClick}
+      target={target}
+      underline={underline}
+    >
+      {children ?? label}
+    </A>
+  );
+};
