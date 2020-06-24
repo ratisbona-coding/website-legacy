@@ -1,9 +1,12 @@
 import * as React from "react";
 import { Image } from "./image";
-import { Link } from "./link";
+import { EventTitle } from "./eventtitle";
 import styled from "@emotion/styled";
 
-const GoalsDiv = styled.div``;
+const GoalsDiv = styled.div`
+  max-width: 70%;
+  margin: auto;
+`;
 
 const Title = styled.h1``;
 
@@ -11,7 +14,7 @@ const EventList = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 1rem;
-  padding: 0;
+  padding: 1rem;
 `;
 
 const Event = styled.div`
@@ -21,7 +24,6 @@ const Event = styled.div`
 
 const EventContent = styled.div``;
 const EventText = styled.p``;
-const EventName = styled.h2``;
 
 // Block-Element so that the logo of the respective image can be easily constrained and styled
 const EventImage = styled.div``;
@@ -29,11 +31,10 @@ const EventImage = styled.div``;
 /*
 Stichpunkte:
 
-Wir lieben Hackathons und versuchen deshalb, mindestens einmal im Jahr unseren überregional bekannten Hackathon “Hackaburg” durchzuführen.
 
-Informatik ist nicht das beliebteste Schulfach, das wissen wir. Deshalb führen wir mit dem Mini “Hackaburg School” Hackathon interessierte Schüler spielerisch und hands-on in die Welt der praktischen IT ein. Bislang konnten wir hierfür die FOSBOS und das Piendl Gymnasium gewinnen. 
-Informatik, sowie Medienkompetenz werden in unserer Gesellschaft immer wichtiger, und Schulen “sind nicht agil genug um mitzuhalten”. Deshalb ...
-Kellerkind war gestern: Einmal im Monat treffen wir uns zum Hackaburg Stammtisch, bei dem hochkarätige Speaker über die neuesten Entwicklungen und Technologien informieren. Alle sind willkommen, egal ob technik-affin oder Laie.
+
+ Deshalb ...
+
 
 Fake News sind gefährlich. Wir haben uns deshalb insbesondere der Förderung von Forschung, Entwicklung und Aufklärung im Bereich der informationstechnologien gewidmet.
 Du musst nicht Bill Gates sein, um Computer richtig zu verstehen: Deshalb darf die Allgemeinbildung und Förderung der Bevölkerung im Umgang mit neuen Technologien nicht zu kurz kommen.
@@ -62,29 +63,12 @@ Die genauen Inhalte unserer Satzung sind hier nachzulesen.
 */
 
 /* 
-Timeline mit Events, parallel dazu things aus dem Text
+Timeline mit Events, parallel dazu sachen aus dem Text
 */
-
-type EventTitleProps = {
-  name: string;
-  link?: string;
-};
-
-const EventTitle = ({ name, link }: EventTitleProps) => (
-  <>
-    {link ? (
-      <Link to={link} label={name}>
-        <EventName>{name}</EventName>
-      </Link>
-    ) : (
-      <EventName>{name}</EventName>
-    )}
-  </>
-);
 
 export const Goals = () => (
   <GoalsDiv>
-    <Title>Our Goals (?)</Title>
+    <Title>Our Goals:</Title>
     <EventList>
       <Event>
         <EventImage>
@@ -92,7 +76,11 @@ export const Goals = () => (
         </EventImage>
         <EventContent>
           <EventTitle name="Hackaburg" link="https://hackaburg.de" />
-          <EventText></EventText>
+          <EventText>
+            Wir lieben Hackathons und versuchen deshalb, mindestens einmal im
+            Jahr unseren überregional bekannten Hackathon “Hackaburg”
+            durchzuführen.
+          </EventText>
         </EventContent>
       </Event>
       <Event>
@@ -105,7 +93,15 @@ export const Goals = () => (
         </EventImage>
         <EventContent>
           <EventTitle name="Hackaburg School" />
-          <EventText></EventText>
+          <EventText>
+            Informatik ist nicht das beliebteste Schulfach, das wissen wir.
+            Deshalb führen wir mit dem Mini “Hackaburg School” Hackathon
+            interessierte Schüler spielerisch und hands-on in die Welt der
+            praktischen IT ein. Bislang konnten wir hierfür die FOSBOS und das
+            Piendl Gymnasium gewinnen. Informatik, sowie Medienkompetenz werden
+            in unserer Gesellschaft immer wichtiger, und Schulen “sind nicht
+            agil genug um mitzuhalten”.
+          </EventText>
         </EventContent>
       </Event>
       <Event>
@@ -114,7 +110,12 @@ export const Goals = () => (
         </EventImage>
         <EventContent>
           <EventTitle name="Stammtisch" />
-          <EventText></EventText>
+          <EventText>
+            Kellerkind war gestern: Einmal im Monat treffen wir uns zum
+            Hackaburg Stammtisch, bei dem hochkarätige Speaker über die neuesten
+            Entwicklungen und Technologien informieren. Alle sind willkommen,
+            egal ob technik-affin oder Laie.
+          </EventText>
         </EventContent>
       </Event>
     </EventList>
