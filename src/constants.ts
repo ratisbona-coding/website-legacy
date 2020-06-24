@@ -23,3 +23,7 @@ export const asciiArtLogo = `
 /_/   \\__,_/\\__/_/____/_.___/\\____/_/ /_/\\__,_/   \\___/\\____/\\__,_/_/_/ /_/\\__, /   \\___(_)___(_)
                                                                           /____/
 `;
+
+export const eventDotSize = "12px";
+export const eventTimelineSize = "2px";
+export const eventBranchCurveHeightPixels = 50;
