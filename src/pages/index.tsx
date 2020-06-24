@@ -18,6 +18,7 @@ export default () => (
         },
       ]}
     />
+    <div style={{ height: "50vh" }} />
     <Goals />
   </Page>
 );
