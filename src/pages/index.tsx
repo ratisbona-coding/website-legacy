@@ -20,5 +20,6 @@ export default () => (
     />
     <div style={{ height: "50vh" }} />
     <Goals />
+    <div style={{ height: "50vh" }} />
   </Page>
 );
