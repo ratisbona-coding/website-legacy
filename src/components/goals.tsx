@@ -3,16 +3,20 @@ import { Image } from "./image";
 import { Link } from "./link";
 import styled from "@emotion/styled";
 
+const GoalsDiv = styled.div``;
+
+const Title = styled.h1``;
+
 const EventList = styled.div`
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  padding: 0;
 `;
 
 const Event = styled.div`
   display: flex;
   flex-direction: column;
-
-  width: 33%;
 `;
 
 const EventContent = styled.div``;
@@ -20,9 +24,7 @@ const EventText = styled.p``;
 const EventName = styled.h2``;
 
 // Block-Element so that the logo of the respective image can be easily constrained and styled
-const EventImage = styled.div`
-  width: 25%;
-`;
+const EventImage = styled.div``;
 
 /*
 Stichpunkte:
@@ -81,23 +83,40 @@ const EventTitle = ({ name, link }: EventTitleProps) => (
 );
 
 export const Goals = () => (
-  <EventList>
-    <Event>
-      <EventImage>
-        <Image label="Hackaburg" src="images/hackaburg.svg" />
-      </EventImage>
-      <EventContent>
-        <EventTitle name="Hackaburg" link="https://hackaburg.de" />
+  <GoalsDiv>
+    <Title>Our Goals (?)</Title>
+    <EventList>
+      <Event>
+        <EventImage>
+          <Image label="Hackaburg" src="images/hackaburg.svg" />
+        </EventImage>
+        <EventContent>
+          <EventTitle name="Hackaburg" link="https://hackaburg.de" />
+          <EventText></EventText>
+        </EventContent>
+      </Event>
+      <Event>
+        <EventTitle name="Google Hashcode" />
         <EventText></EventText>
-      </EventContent>
-    </Event>
-    <Event>
-      <EventTitle name="Google Hashcode" />
-      <EventText></EventText>
-    </Event>
-    <Event>
-      <EventTitle name="Hackaburg School" />
-      <EventText></EventText>
-    </Event>
-  </EventList>
+      </Event>
+      <Event>
+        <EventImage>
+          <Image label="Hackaburg School" src="images/hb-school.svg" />
+        </EventImage>
+        <EventContent>
+          <EventTitle name="Hackaburg School" />
+          <EventText></EventText>
+        </EventContent>
+      </Event>
+      <Event>
+        <EventImage>
+          <Image label="Stammtisch" src="images/hb-stammtisch.svg" />
+        </EventImage>
+        <EventContent>
+          <EventTitle name="Stammtisch" />
+          <EventText></EventText>
+        </EventContent>
+      </Event>
+    </EventList>
+  </GoalsDiv>
 );
