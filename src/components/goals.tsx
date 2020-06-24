@@ -16,11 +16,20 @@ const EventList = styled.div`
   padding-bottom: 1rem;
 `;
 
+/*
 const Event = styled.div`
   display: grid;
   grid-template-columns: auto auto auto;
   grid-column-gap: 1rem;
   grid-auto-rows: 1fr;
+`;
+*/
+
+const Event = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 const Title = styled.h1``;
@@ -35,7 +44,7 @@ const EventText = styled.ul`
 `;
 
 const Point = styled.li`
-  padding: 5px;
+  padding: 5px 0;
 `;
 
 const Footer = styled.div``;
