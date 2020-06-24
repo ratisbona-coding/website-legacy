@@ -70,7 +70,6 @@ const Brand = styled.div`
     padding: 1rem;
     margin-left: 2%;
   }
-
 `;
 
 const Menu = styled.ul`

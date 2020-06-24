@@ -19,7 +19,7 @@ export default () => (
         {
           label: "Kontakt",
           marker: Anchors.Contact,
-        }
+        },
       ]}
     />
 

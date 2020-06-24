@@ -12,13 +12,11 @@ const ImgDiv = styled.div`
 `;
 
 export const Landing = () => {
-
   return (
     <Container>
       <ImgDiv>
         <Image label="Logo" src="images/logo.svg" />
       </ImgDiv>
     </Container>
-
   );
 };
