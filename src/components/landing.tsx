@@ -3,20 +3,16 @@ import styled from "@emotion/styled";
 import { Container } from "./container";
 import { Image } from "./image";
 
-const ImgDiv = styled.div`
+const Jumbotron = styled.div`
   padding-top: 14rem;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+  margin: 0 auto;
 `;
 
-export const Landing = () => {
-  return (
-    <Container>
-      <ImgDiv>
-        <Image label="Logo" src="images/logo.svg" />
-      </ImgDiv>
-    </Container>
-  );
-};
+export const Landing = () => (
+  <Container>
+    <Jumbotron>
+      <Image label="Logo" src="images/logo.svg" />
+    </Jumbotron>
+  </Container>
+);
