@@ -1,7 +1,7 @@
 export enum Anchors {
   // index
-  Goals = "goals",
   About = "about",
+  Goals = "goals",
   Contact = "contact",
   FAQ = "faq",
 

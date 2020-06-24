@@ -24,6 +24,7 @@ const Nav = styled.nav<INavProps>`
   right: 0;
   z-index: 3;
 
+
   color: white;
   font-weight: bold;
   background-color: rgba(0, 0, 0, 0.5);
@@ -62,6 +63,14 @@ const ToggleButton = styled.label`
 const Brand = styled.div`
   display: inline-block;
   padding: 1rem;
+  margin-left: 28%;
+
+  @media screen and (max-width: ${breakpointTablet}) {
+    display: inline-block;
+    padding: 1rem;
+    margin-left: 2%;
+  }
+
 `;
 
 const Menu = styled.ul`
@@ -145,7 +154,7 @@ export const Navbar = ({ items }: INavbarProps) => {
     <Nav raised={isRaised}>
       <Container>
         <Brand>
-          <Link label="Home" to="../index.html" underline={false}>
+          <Link label="Home" to="../" underline={false}>
             Ratisbona Coding e.V.
           </Link>
         </Brand>
