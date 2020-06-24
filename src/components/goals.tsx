@@ -3,7 +3,7 @@ import { Image } from "./image";
 import { EventTitle } from "./eventtitle";
 import styled from "@emotion/styled";
 
-const GoalsDiv = styled.div`
+const GlobalDiv = styled.div`
   max-width: 70%;
   margin: auto;
 `;
@@ -25,50 +25,14 @@ const Event = styled.div`
 const EventContent = styled.div``;
 const EventText = styled.p``;
 
+const GoalsText = styled.p``;
+
 // Block-Element so that the logo of the respective image can be easily constrained and styled
 const EventImage = styled.div``;
 
-/*
-Stichpunkte:
-
-
-
- Deshalb ...
-
-
-Fake News sind gefährlich. Wir haben uns deshalb insbesondere der Förderung von Forschung, Entwicklung und Aufklärung im Bereich der informationstechnologien gewidmet.
-Du musst nicht Bill Gates sein, um Computer richtig zu verstehen: Deshalb darf die Allgemeinbildung und Förderung der Bevölkerung im Umgang mit neuen Technologien nicht zu kurz kommen.
-
-Local Heroes statt Silicon Valley: Wir fördern universitäre Leistungen im Bereich der MINT-Fächer und unterstützen durch unser Netzwerk an lokalen Firmen auch gerne bei der Stellensuche.
-*/
-
-/*
-Text:
-
-Unser Ziel ist es Jugendliche sowie bereits Studierende an den Bereich der Informationstechnologien mit Spaß heranzuführen bzw. das Wissen zu erweitern.
-
-Es soll auch die Angst/Vorurteile gegenüber Programmieren genommen werden, dies geschieht z.B für Schüler durch einen erleichterten Einstieg bei der Hackaburg School. Hierbei stehen Mentoren bei Fragen aller Art zur Seite, sodass ein Lern/Programmier-Erfolg ohne Frustration für die Schüler erfolgt.
-
-(Einem Computer ist egal, ob du männlich, weiblich oder nicht binär bist oder welche Hautfarbe du hast. Wir legen deshalb besonders Wert darauf, ein inklusives und unterstützendes Umfeld zu bieten, in dem jede noch so verrückte Idee zur Sprache kommen soll. Code kann unheimlich wirken, gerade am Anfang der spannenden Reise in die Welt der IT. Das wissen wir. Deshalb versuchen wir beispielsweise durch Hackaburg School…)
-
-Wir versuchen jedes Jahr die Hackaburg noch ein Stückchen besser zu machen, und so den Studenten eine optimale Möglichkeit zu geben ihr Wissen und Können zu erweitern-denn mit Spaß lernt man am besten.
-
-Die Hackaburg selbst soll auch neue Teams mit Personen aus verschiedensten Herkünften und Stärken zusammenführen, hierbei freut es uns besonders wenn sich Freundschaften oder Kooperationen in dieser Atmosphäre bilden.
-
-Ebenfalls soll der Verein selbst bzw. vom Verein ausgeführte Veranstaltungen als Austauschplattform für Diskussionen, Vorträge, oder auch neuen Ideen im Bereich der Informatik/Informationstechnologien dienen.
-
-Auch die Volksbildung, egal ob bei jung oder alt, im Bereich der neuen Technologien z.b KI möchten wir fördern, da diese In Zukunft große Auswirkungen auf unser alltägliches Leben haben wird.
-
-Die genauen Inhalte unserer Satzung sind hier nachzulesen.
-*/
-
-/* 
-Timeline mit Events, parallel dazu sachen aus dem Text
-*/
-
 export const Goals = () => (
-  <GoalsDiv>
-    <Title>Our Goals:</Title>
+  <GlobalDiv>
+    <Title>Events:</Title>
     <EventList>
       <Event>
         <EventImage>
@@ -82,10 +46,6 @@ export const Goals = () => (
             durchzuführen.
           </EventText>
         </EventContent>
-      </Event>
-      <Event>
-        <EventTitle name="Google Hashcode" />
-        <EventText></EventText>
       </Event>
       <Event>
         <EventImage>
@@ -119,5 +79,38 @@ export const Goals = () => (
         </EventContent>
       </Event>
     </EventList>
-  </GoalsDiv>
+    <Title>Goals:</Title>
+    <GoalsText></GoalsText>
+  </GlobalDiv>
 );
+
+/*
+Stichpunkte:
+
+Deshalb ...
+
+Fake News sind gefährlich. Wir haben uns deshalb insbesondere der Förderung von Forschung, Entwicklung und Aufklärung im Bereich der informationstechnologien gewidmet.
+Du musst nicht Bill Gates sein, um Computer richtig zu verstehen: Deshalb darf die Allgemeinbildung und Förderung der Bevölkerung im Umgang mit neuen Technologien nicht zu kurz kommen.
+
+Local Heroes statt Silicon Valley: Wir fördern universitäre Leistungen im Bereich der MINT-Fächer und unterstützen durch unser Netzwerk an lokalen Firmen auch gerne bei der Stellensuche.
+
+
+
+Text:
+
+Unser Ziel ist es Jugendliche sowie bereits Studierende an den Bereich der Informationstechnologien mit Spaß heranzuführen bzw. das Wissen zu erweitern.
+
+Es soll auch die Angst/Vorurteile gegenüber Programmieren genommen werden, dies geschieht z.B für Schüler durch einen erleichterten Einstieg bei der Hackaburg School. Hierbei stehen Mentoren bei Fragen aller Art zur Seite, sodass ein Lern/Programmier-Erfolg ohne Frustration für die Schüler erfolgt.
+
+(Einem Computer ist egal, ob du männlich, weiblich oder nicht binär bist oder welche Hautfarbe du hast. Wir legen deshalb besonders Wert darauf, ein inklusives und unterstützendes Umfeld zu bieten, in dem jede noch so verrückte Idee zur Sprache kommen soll. Code kann unheimlich wirken, gerade am Anfang der spannenden Reise in die Welt der IT. Das wissen wir. Deshalb versuchen wir beispielsweise durch Hackaburg School…)
+
+Wir versuchen jedes Jahr die Hackaburg noch ein Stückchen besser zu machen, und so den Studenten eine optimale Möglichkeit zu geben ihr Wissen und Können zu erweitern-denn mit Spaß lernt man am besten.
+
+Die Hackaburg selbst soll auch neue Teams mit Personen aus verschiedensten Herkünften und Stärken zusammenführen, hierbei freut es uns besonders wenn sich Freundschaften oder Kooperationen in dieser Atmosphäre bilden.
+
+Ebenfalls soll der Verein selbst bzw. vom Verein ausgeführte Veranstaltungen als Austauschplattform für Diskussionen, Vorträge, oder auch neuen Ideen im Bereich der Informatik/Informationstechnologien dienen.
+
+Auch die Volksbildung, egal ob bei jung oder alt, im Bereich der neuen Technologien z.b KI möchten wir fördern, da diese In Zukunft große Auswirkungen auf unser alltägliches Leben haben wird.
+
+Die genauen Inhalte unserer Satzung sind hier nachzulesen.
+*/
