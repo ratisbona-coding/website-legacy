@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Image } from "./image";
-import { EventTitle } from "./eventtitle";
+import { Button } from "./button";
 
-import { defaultEventHeight } from "../constants";
+import { defaultEventHeight, defaultImageWidth } from "../constants";
 
 import styled from "@emotion/styled";
 
@@ -16,26 +16,16 @@ const EventList = styled.div`
   padding-bottom: 1rem;
 `;
 
-/*
 const Event = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-column-gap: 1rem;
-  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-rows: auto;
 `;
-*/
-
-const Event = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const Title = styled.h1``;
 
 const EventContent = styled.div`
-  height: ${defaultEventHeight};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const EventText = styled.ul`
@@ -47,7 +37,18 @@ const Point = styled.li`
   padding: 5px 0;
 `;
 
-const Footer = styled.div``;
+const ImageContainer = styled.div`
+  max-width: fit-content;
+`;
+
+const Footer = styled.ul`
+  list-style-type: none;
+  padding: 0;
+`;
+
+const EventTitle = styled.h2`
+  margin: 0;
+`;
 
 /*
 Fake News sind gefährlich. Wir haben uns deshalb insbesondere der
@@ -72,16 +73,19 @@ auch neuen Ideen im Bereich der Informatik/Informationstechnologien dienen.
 
 export const Goals = () => (
   <GlobalDiv>
-    <Title>Events:</Title>
+    <h1>Events:</h1>
     <EventList>
       <Event>
-        <Image
-          label="Hackaburg School"
-          src="images/hb-school.svg"
-          height={defaultEventHeight}
-        />
+        <ImageContainer>
+          <Image
+            label="Hackaburg School"
+            src="images/hb-school.svg"
+            height={defaultEventHeight}
+            width={defaultImageWidth}
+          />
+        </ImageContainer>
         <EventContent>
-          <EventTitle name="Hackaburg School" />
+          <EventTitle>Hackaburg School</EventTitle>
           <EventText>
             <Point>
               Informatik ist nicht das beliebteste Schulfach, das wissen wir.
@@ -106,8 +110,16 @@ export const Goals = () => (
         </EventContent>
       </Event>
       <Event>
+        <ImageContainer>
+          <Image
+            label="Hackaburg"
+            src="images/hackaburg.svg"
+            height={defaultEventHeight}
+            width={defaultImageWidth}
+          />
+        </ImageContainer>
         <EventContent>
-          <EventTitle name="Hackaburg" link="https://hackaburg.de" />
+          <EventTitle>Hackaburg</EventTitle>
           <EventText>
             <Point>
               Wir lieben Hackathons und versuchen deshalb, mindestens einmal im
@@ -126,25 +138,26 @@ export const Goals = () => (
               freut es uns besonders wenn sich Freundschaften oder Kooperationen
               in dieser Atmosphäre bilden.
             </Point>
+            <Point>
+              <Button
+                to="https://hackaburg.de"
+                label="Zur Hackaburg Website!"
+              />
+            </Point>
           </EventText>
         </EventContent>
-        <Image
-          label="Hackaburg"
-          src="images/hackaburg.svg"
-          height={defaultEventHeight}
-        />
       </Event>
       <Event>
-        <Image
-          label="Stammtisch"
-          src="images/hb-stammtisch.svg"
-          height={defaultEventHeight}
-        />
-        <EventContent>
-          <EventTitle
-            name="Stammtisch"
-            link="https://stammtisch.hackaburg.de"
+        <ImageContainer>
+          <Image
+            label="Stammtisch"
+            src="images/hb-stammtisch.svg"
+            height={defaultEventHeight}
+            width={defaultImageWidth}
           />
+        </ImageContainer>
+        <EventContent>
+          <EventTitle>Stammtisch</EventTitle>
           <EventText>
             <Point>
               Kellerkind war gestern: Einmal im Monat treffen wir uns zum
@@ -152,12 +165,23 @@ export const Goals = () => (
               neuesten Entwicklungen und Technologien informieren. Alle sind
               willkommen, egal ob technik-affin oder Laie.
             </Point>
+            <Point>
+              <Button
+                to="https://stammtisch.hackaburg.de"
+                label="Zur Stammtisch Website!"
+              />
+            </Point>
           </EventText>
         </EventContent>
       </Event>
     </EventList>
     <Footer>
-      Du willst mehr wissen? Schau dir doch hier unsere Satzung an!
+      <Point>
+        Du willst mehr wissen? Schau dir doch hier unsere Satzung an!
+      </Point>
+      <Point>
+        <Button to="#" label="Link zur Satzung" />
+      </Point>
     </Footer>
   </GlobalDiv>
 );

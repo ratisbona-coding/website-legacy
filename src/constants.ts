@@ -25,3 +25,4 @@ export const asciiArtLogo = `
 `;
 
 export const defaultEventHeight = "40vh";
+export const defaultImageWidth = "35vh";
