@@ -22,7 +22,7 @@ const Footer = styled.div`
 
 export const Goals = () => (
   <GoalsContainer>
-    <h1>Events</h1>
+    <h1>Goals</h1>
     <EventList>
       <Event name="Hackaburg School" imageLink="images/hb-school.svg">
         <Paragraph>
