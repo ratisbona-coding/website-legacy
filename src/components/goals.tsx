@@ -34,7 +34,7 @@ const P = styled.p`
 `;
 
 const ImageContainer = styled.div`
-  max-width: fit-content;
+  max-width: ${imageWidth};
 `;
 
 const Footer = styled.ul`
