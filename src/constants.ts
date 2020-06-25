@@ -12,7 +12,7 @@ export const triangleSize = "6rem";
 export const hourSize = 5.1;
 export const transitionDuration = "0.2s";
 
-export const breakpointTablet = "1024px";
+export const breakpointTablet = "1022px";
 export const breakpointMobile = "766px";
 
 export const asciiArtLogo = `
