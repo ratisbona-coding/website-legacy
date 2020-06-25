@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import { accentColorLight } from "../constants";
 
 const ButtonContainer = styled.div`
-  padding: 10px;
+  padding: 2rem;
   background-color: ${accentColorLight};
   max-width: fit-content;
 

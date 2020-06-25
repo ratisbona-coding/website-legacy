@@ -24,5 +24,5 @@ export const asciiArtLogo = `
                                                                           /____/
 `;
 
-export const defaultEventHeight = "40vh";
-export const defaultImageWidth = "35vh";
+export const eventHeight = "40vh";
+export const imageWidth = "35vh";
