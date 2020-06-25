@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Image } from "./image";
 import { Button } from "./button";
-import { eventHeight, imageWidth } from "../constants";
+import { eventHeight, imageWidth, breakpointTablet } from "../constants";
 import styled from "@emotion/styled";
 
 const GoalsContainer = styled.div`
@@ -14,9 +14,18 @@ const EventList = styled.div`
 `;
 
 const Event = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  grid-template-rows: auto;
+  display: flex;
+  flex-direction: row;
+
+  @media (min-width: ${breakpointTablet}) {
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  @media (max-width: ${breakpointTablet}) {
+    flex-direction: column;
+  }
 `;
 
 const EventContent = styled.div`
@@ -27,6 +36,10 @@ const EventContent = styled.div`
 
 const EventTextContainer = styled.div`
   padding: 0;
+
+  @media (min-width: ${breakpointTablet}) {
+    padding-left: 1rem;
+  }
 `;
 
 const P = styled.p`
@@ -44,6 +57,10 @@ const Footer = styled.ul`
 
 const EventTitle = styled.h2`
   margin: 0;
+
+  @media (min-width: ${breakpointTablet}) {
+    padding-left: 1rem;
+  }
 `;
 
 export const Goals = () => (
