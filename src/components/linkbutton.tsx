@@ -4,6 +4,10 @@ import styled from "@emotion/styled";
 import { accentColorLight, highlightColor } from "../constants";
 
 const ButtonContainer = styled.div`
+  padding: 0.5rem 0;
+`;
+
+const Button = styled.div`
   padding: 0.75rem;
   background-color: ${accentColorLight};
   max-width: fit-content;
@@ -27,12 +31,12 @@ interface ILinkButtonProps {
   label: string;
 }
 
-export const LinkButton = ({ to, label }: ILinkButtonProps) => {
-  return (
+export const LinkButton = ({ to, label }: ILinkButtonProps) => (
+  <ButtonContainer>
     <Link to={to} label={label} underline={false}>
-      <ButtonContainer>
+      <Button>
         <ButtonText>{label}</ButtonText>
-      </ButtonContainer>
+      </Button>
     </Link>
-  );
-};
+  </ButtonContainer>
+);

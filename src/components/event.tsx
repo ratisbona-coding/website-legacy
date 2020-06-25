@@ -22,6 +22,8 @@ const DefaultEventContainer = styled.div`
   display: flex;
   flex-direction: row;
 
+  padding: 1rem 0;
+
   @media (max-width: ${breakpointTablet}) {
     flex-direction: column;
   }
@@ -42,10 +44,6 @@ const EventContent = styled.div`
 `;
 
 const EventTextContainer = styled.div`
-  padding: 0;
-`;
-
-const Paragraph = styled.p`
   padding: 0;
 `;
 
@@ -84,9 +82,7 @@ export const Event = ({
         <EventTextContainer>
           {children}
           {buttonLink && buttonText && (
-            <Paragraph>
-              <LinkButton to={buttonLink} label={buttonText} />
-            </Paragraph>
+            <LinkButton to={buttonLink} label={buttonText} />
           )}
         </EventTextContainer>
       </EventContent>
