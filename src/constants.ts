@@ -25,5 +25,5 @@ export const asciiArtLogo = `
 `;
 
 export const eventHeight = "40vh";
-export const imageWidth = "35vh";
+export const goalImageWidth = "35vh";
 export const highlightColor = "#3080ff";

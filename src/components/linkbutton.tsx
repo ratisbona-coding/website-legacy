@@ -22,12 +22,12 @@ const ButtonText = styled.p`
   color: #fff;
 `;
 
-interface IButtonProps {
+interface ILinkButtonProps {
   to: string;
   label: string;
 }
 
-export const Button = ({ to, label }: IButtonProps) => {
+export const LinkButton = ({ to, label }: ILinkButtonProps) => {
   return (
     <Link to={to} label={label} underline={false}>
       <ButtonContainer>
