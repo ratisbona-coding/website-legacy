@@ -13,7 +13,6 @@ const Jumbotron = styled.div`
 
   @media screen and (max-width: ${breakpointMobile}) {
     padding-top: 12rem;
-    margin: auto;
   }
 `;
 
