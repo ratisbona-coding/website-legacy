@@ -1,18 +1,14 @@
 import * as React from "react";
-import { Link } from "./link";
 import styled from "@emotion/styled";
 import { accentColorLight, highlightColor } from "../constants";
 
-const ButtonContainer = styled.div`
-  padding: 0.5rem 0;
-`;
-
-const Button = styled.div`
-  padding: 0.75rem;
+const Button = styled.button`
   background-color: ${accentColorLight};
   max-width: fit-content;
 
+  border: none;
   border-radius: 5px;
+  font-size: inherit;
 
   &:hover {
     background-color: ${highlightColor};
@@ -21,9 +17,15 @@ const Button = styled.div`
 `;
 
 const ButtonText = styled.p`
+  padding: 0.5rem;
   margin: 0;
-  padding: 0;
   color: #fff;
+
+  font-size: inherit;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 interface ILinkButtonProps {
@@ -32,11 +34,7 @@ interface ILinkButtonProps {
 }
 
 export const LinkButton = ({ to, label }: ILinkButtonProps) => (
-  <ButtonContainer>
-    <Link to={to} label={label} underline={false}>
-      <Button>
-        <ButtonText>{label}</ButtonText>
-      </Button>
-    </Link>
-  </ButtonContainer>
+  <Button onClick={() => (window.location.href = to)}>
+    <ButtonText>{label}</ButtonText>
+  </Button>
 );

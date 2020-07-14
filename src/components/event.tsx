@@ -53,6 +53,7 @@ const ImageContainer = styled.div`
 
 const EventTitle = styled.h2`
   margin: 0;
+  color: white;
 `;
 
 export const Event = ({

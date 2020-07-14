@@ -14,6 +14,7 @@ const EventList = styled.div`
 
 const Paragraph = styled.p`
   padding: 0;
+  color: white;
 `;
 
 const Footer = styled.div`
