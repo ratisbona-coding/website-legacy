@@ -17,6 +17,10 @@ const Paragraph = styled.p`
   color: white;
 `;
 
+const Heading = styled.h1`
+  color: white;
+`;
+
 const Footer = styled.div`
   display: flex;
   flex-direction: column;
@@ -28,7 +32,7 @@ const Footer = styled.div`
 
 export const Goals = () => (
   <GoalsContainer>
-    <h1>Goals</h1>
+    <Heading>Goals</Heading>
     <EventList>
       <Event name="Hackaburg School" imageLink="images/hb-school.svg">
         <Paragraph>
